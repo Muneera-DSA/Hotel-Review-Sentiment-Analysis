@@ -1,5 +1,5 @@
 # 🌟 Hotel Review Sentiment Analysis
-A clean, production‑style NLP project built with Python, Scikit‑Learn, and TF‑IDF.
+An end-to-end NLP project for hotel review sentiment classification using TF-IDF and Logistic Regression.
 
 ## 📌 Overview
 This project builds a sentiment analysis model for hotel reviews using Natural Language Processing (NLP) and machine learning.
