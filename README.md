@@ -153,4 +153,4 @@ Building a reusable prediction pipeline
 ## 👤 Author
 **Muneera Mohamed**  
 MSc Data Science | NLP & Analytics Enthusiast  
-[GitHub: *add your link here*](https://github.com/Muneera-DSA)
+(https://github.com/Muneera-DSA)
