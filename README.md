@@ -39,7 +39,7 @@ Kaggle Dataset: **515K Hotel Reviews Data in Europe**
 After downloading, place the CSV file here:
 data/hotel_reviews.csv
 
----csv
+
 🧠 Methodology
 1. Text Preprocessing
 
@@ -79,20 +79,8 @@ Logistic Regression was selected because it is effective for binary classificati
 
 The final model achieved approximately:
 
-Metric	Score
-Accuracy	93%
-Macro F1-Score	0.93
-Weighted F1-Score	0.93
-Class Performance
-Class	Precision	Recall	F1-Score
-Negative	0.92	0.93	0.93
-Positive	0.94	0.93	0.94
-Confusion Matrix
-                 Predicted
-                 Negative  Positive
+<img width="566" height="297" alt="image" src="https://github.com/user-attachments/assets/5f0988cb-25dc-4334-a5cc-35a290cc346c" />
 
-Actual Negative    71,959    5,343
-Actual Positive     6,280   89,539
 
 The relatively balanced precision, recall, and F1-scores across both classes indicate that the model performs consistently on positive and negative reviews.
 
