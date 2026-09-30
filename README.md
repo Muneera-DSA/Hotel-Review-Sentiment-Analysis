@@ -3,30 +3,33 @@ An end-to-end NLP project for hotel review sentiment classification using TF-IDF
 
 ## 📌 Overview
 This project builds a sentiment analysis model for hotel reviews using Natural Language Processing (NLP) and machine learning.
-It classifies customer reviews as Positive or Negative, helping hospitality businesses understand guest satisfaction at scale.
+It classifies hotel review text as **Positive** or **Negative**, helping analyze customer feedback and understand guest sentiment at scale.
 
 ### The project includes:
 - Text preprocessing
-- Feature engineering
-- Model training & evaluation
-- Exported model for reuse
-- Clean, modular code structure
+- TF-IDF feature extraction
+- Logistic Regression classification
+- Model training and evaluation
+- Sentiment prediction on new reviews
+- Modular and reusable Python c
 
 ---
 
 ## 📂 Project Structure
-hotel-sentiment-analysis/
-│── data/
-│   └── hotel_reviews.csv
-│── src/
-│   ├── preprocess.py
-│   └── train.py
-│── notebooks/
-│   └── exploration.ipynb
-│── README.md
-│── requirements.txt
-│── .gitignore
 
+Hotel-Review-Sentiment-Analysis/
+│
+├── data/
+│   └── README.md
+│
+├── src/
+│   ├── preprocess.py
+│   ├── train.py
+│   └── predict.py
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
 ---
 
 ## 📊 Dataset
@@ -36,50 +39,127 @@ Kaggle Dataset: **515K Hotel Reviews Data in Europe**
 After downloading, place the CSV file here:
 data/hotel_reviews.csv
 
----
+---csv
+🧠 Methodology
+1. Text Preprocessing
 
-## 🧠 Features Implemented
-- Text cleaning (lowercasing, punctuation removal, stopwords, lemmatization)
-- TF‑IDF vectorization
-- Logistic Regression classifier
-- Train/test split
-- Evaluation using Accuracy, Precision, Recall, F1‑Score
-- Confusion Matrix
-- Exported model + vectorizer (.pkl)
+The review text is cleaned using:
 
----
+Lowercasing
+Removal of non-alphabetic characters
+Stopword removal
+Lemmatization
+2. TF-IDF Feature Extraction
 
-## 🚀 How to Run
+TF-IDF (Term Frequency-Inverse Document Frequency) converts review text into numerical features.
 
-### 1️⃣ Install dependencies
+The model uses:
+
+Maximum features: 10,000
+N-gram range: (1, 2)
+
+This means the model considers both individual words and two-word phrases.
+
+3. Train/Test Split
+
+The dataset is divided into:
+
+80% training data
+20% testing data
+
+A stratified split is used to maintain the class distribution between training and testing sets.
+
+4. Classification Model
+
+A Logistic Regression classifier is trained on the TF-IDF features.
+
+Logistic Regression was selected because it is effective for binary classification problems involving high-dimensional sparse text features.
+
+📈 Model Performance
+
+The final model achieved approximately:
+
+Metric	Score
+Accuracy	93%
+Macro F1-Score	0.93
+Weighted F1-Score	0.93
+Class Performance
+Class	Precision	Recall	F1-Score
+Negative	0.92	0.93	0.93
+Positive	0.94	0.93	0.94
+Confusion Matrix
+                 Predicted
+                 Negative  Positive
+
+Actual Negative    71,959    5,343
+Actual Positive     6,280   89,539
+
+The relatively balanced precision, recall, and F1-scores across both classes indicate that the model performs consistently on positive and negative reviews.
+
+🚀 How to Run
+1️⃣ Install dependencies
 pip install -r requirements.txt
+2️⃣ Download the dataset
 
-### 2️⃣ Train the model
+Download the hotel reviews dataset and place:
+
+Hotel_Reviews.csv
+
+in the project root directory.
+
+3️⃣ Train the model
+
+From the project root:
+
 python src/train.py
 
-### 3️⃣ Output
-- Classification report  
-- Confusion matrix  
-- Saved model files:
-  - `sentiment_model.pkl`
-  - `vectorizer.pkl`
+The training script will:
 
----
+Load the dataset
+Prepare positive and negative reviews
+Clean the text
+Create TF-IDF features
+Train the Logistic Regression model
+Display the classification report
+Display the confusion matrix
+Save the trained model and vectorizer
+4️⃣ Make a prediction
 
-## 📈 Results
-The model achieves **~85–90% accuracy**, depending on preprocessing and TF‑IDF parameters.
+Run:
 
----
+python src/predict.py
 
-## 🛠 Tech Stack
-- Python  
-- Scikit‑Learn  
-- NLTK  
-- Pandas  
-- NumPy  
-- Joblib  
+Enter a hotel review when prompted.
 
----
+Example:
+
+Enter a hotel review: The room was clean and the staff were very helpful.
+
+Predicted Sentiment: Positive
+🛠 Tech Stack
+Python
+Pandas
+Scikit-Learn
+NLTK
+TF-IDF
+Logistic Regression
+Joblib
+🔍 Key Learning Outcomes
+
+This project demonstrates practical experience with:
+
+Natural Language Processing
+Text preprocessing
+Feature engineering
+TF-IDF vectorization
+Binary classification
+Handling class imbalance
+Model evaluation
+Confusion matrix analysis
+Model serialization
+Building a reusable prediction pipeline
+
+
 
 ## 👤 Author
 **Muneera Mohamed**  
