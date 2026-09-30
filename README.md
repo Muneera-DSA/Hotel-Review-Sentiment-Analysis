@@ -37,7 +37,7 @@ Kaggle Dataset: **515K Hotel Reviews Data in Europe**
 🔗 https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe
 
 After downloading, place the CSV file here:
-data/hotel_reviews.csv
+data/Hotel_Reviews.csv
 
 
 🧠 Methodology
