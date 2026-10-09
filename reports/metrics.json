@@ -1,0 +1,192 @@
+{
+  "run": {
+    "timestamp": "2026-10-08 20:03",
+    "seconds": 707.6,
+    "version": "2.0.0",
+    "sklearn": "1.9.1",
+    "args": {
+      "data": "/home/claude/hotel/data/Hotel_Reviews.csv",
+      "sample": "1.0",
+      "n_boot": "300",
+      "n_jobs": "-1",
+      "reports_dir": "/home/claude/hotel/reports",
+      "model_path": "/home/claude/hotel/models/sentiment_pipeline.joblib"
+    }
+  },
+  "data": {
+    "raw_rows": 515738,
+    "after_exact_duplicate_removal": 515173,
+    "after_empty_text_removal": 514929,
+    "ambiguous_band_removed": 149128,
+    "after_text_duplicate_removal": 363666,
+    "final_rows": 363666,
+    "negative_rate": 0.08398915488387697,
+    "n_hotels": 1492
+  },
+  "split": {
+    "train_rows": 291580,
+    "test_rows": 72086,
+    "train_hotels": 1193,
+    "test_hotels": 299
+  },
+  "model": {
+    "best_C": 4.0,
+    "cv_pr_auc": 0.8660784404404085,
+    "cv_results": {
+      "0.25": 0.83125895018755,
+      "1.0": 0.8581035843758296,
+      "4.0": 0.8660784404404085
+    },
+    "threshold": 0.3092113856661465,
+    "target_recall": 0.8
+  },
+  "test": {
+    "model": {
+      "pr_auc": 0.849313391226077,
+      "roc_auc": 0.9750820404828947,
+      "brier": 0.021413121516937566,
+      "threshold": 0.3092113856661465,
+      "precision_neg": 0.7288590604026846,
+      "recall_neg": 0.8090676883780332,
+      "f1_neg": 0.7668717845253707,
+      "flag_rate": 0.07234414449407651,
+      "tp": 3801,
+      "fp": 1414,
+      "fn": 897,
+      "tn": 65974,
+      "n": 72086,
+      "prevalence": 0.0651721554809533
+    },
+    "model_ci": {
+      "pr_auc_95ci": [
+        0.820464989664171,
+        0.8716442301974598
+      ],
+      "recall_neg_95ci": [
+        0.7903764365756337,
+        0.8246834556493464
+      ],
+      "precision_neg_95ci": [
+        0.6903808651957788,
+        0.7617787325179949
+      ],
+      "n_boot": 300
+    },
+    "baselines": {
+      "prior": {
+        "pr_auc": 0.0651721554809533,
+        "roc_auc": 0.5,
+        "brier": 0.06147554150512441,
+        "threshold": 0.5,
+        "precision_neg": 0.0,
+        "recall_neg": 0.0,
+        "f1_neg": 0.0,
+        "flag_rate": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4698,
+        "tn": 67388,
+        "n": 72086,
+        "prevalence": 0.0651721554809533
+      },
+      "review_length": {
+        "pr_auc": 0.1300344902562914,
+        "roc_auc": 0.6240422214019785,
+        "brier": 0.23816767413688436,
+        "threshold": 0.5,
+        "precision_neg": 0.09042468332216586,
+        "recall_neg": 0.6032354193273733,
+        "f1_neg": 0.15727406420821888,
+        "flag_rate": 0.4347723552423494,
+        "tp": 2834,
+        "fp": 28507,
+        "fn": 1864,
+        "tn": 38881,
+        "n": 72086,
+        "prevalence": 0.0651721554809533
+      },
+      "tfidf_unigram": {
+        "pr_auc": 0.8016594748801757,
+        "roc_auc": 0.967058984053082,
+        "brier": 0.02551128190922419,
+        "threshold": 0.5,
+        "precision_neg": 0.8234971177600878,
+        "recall_neg": 0.6385696040868455,
+        "f1_neg": 0.7193382088478599,
+        "flag_rate": 0.050536858752046165,
+        "tp": 3000,
+        "fp": 643,
+        "fn": 1698,
+        "tn": 66745,
+        "n": 72086,
+        "prevalence": 0.0651721554809533
+      },
+      "tfidf_stopwords_removed": {
+        "pr_auc": 0.786932336536751,
+        "roc_auc": 0.9636849278040213,
+        "brier": 0.02671685310569603,
+        "threshold": 0.5,
+        "precision_neg": 0.8233911254775198,
+        "recall_neg": 0.5964240102171137,
+        "f1_neg": 0.6917664485865942,
+        "flag_rate": 0.047207502150209475,
+        "tp": 2802,
+        "fp": 601,
+        "fn": 1896,
+        "tn": 66787,
+        "n": 72086,
+        "prevalence": 0.0651721554809533
+      }
+    }
+  },
+  "robustness": {
+    "held-out hotels (primary)": {
+      "pr_auc": 0.849313391226077,
+      "roc_auc": 0.9750820404828947,
+      "brier": 0.021413121516937566,
+      "threshold": 0.3092113856661465,
+      "precision_neg": 0.7288590604026846,
+      "recall_neg": 0.8090676883780332,
+      "f1_neg": 0.7668717845253707,
+      "flag_rate": 0.07234414449407651,
+      "tp": 3801,
+      "fp": 1414,
+      "fn": 897,
+      "tn": 65974,
+      "n": 72086,
+      "prevalence": 0.0651721554809533
+    },
+    "random rows (leaks hotel context)": {
+      "pr_auc": 0.8631036749015015,
+      "roc_auc": 0.9737074479046539,
+      "brier": 0.026430950544948595,
+      "threshold": 0.3092113856661465,
+      "precision_neg": 0.7691336594603124,
+      "recall_neg": 0.7978392535603208,
+      "f1_neg": 0.7832235256307247,
+      "flag_rate": 0.08712569087359419,
+      "tp": 4874,
+      "fp": 1463,
+      "fn": 1235,
+      "tn": 65162,
+      "n": 72734,
+      "prevalence": 0.08399098083427282
+    },
+    "most recent 20% of dates": {
+      "pr_auc": 0.8813224587926513,
+      "roc_auc": 0.9760805080996352,
+      "brier": 0.027710539958105348,
+      "threshold": 0.3092113856661465,
+      "precision_neg": 0.7985020884343944,
+      "recall_neg": 0.8027801911381407,
+      "f1_neg": 0.8006354249404289,
+      "flag_rate": 0.09502237672273393,
+      "tp": 5544,
+      "fp": 1399,
+      "fn": 1362,
+      "tn": 64762,
+      "n": 73067,
+      "prevalence": 0.09451599217156856
+    }
+  }
+}

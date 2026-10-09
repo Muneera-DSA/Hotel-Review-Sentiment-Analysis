@@ -1,0 +1,60 @@
+{
+  "no balancing (current model)": {
+    "pr_auc": 0.849313391226077,
+    "roc_auc": 0.9750820404828947,
+    "precision_at_80_recall": 0.7452418715305313,
+    "recall_at_0.5": 0.7128565346956152,
+    "precision_at_0.5": 0.8440020161290323,
+    "n_test": 72086,
+    "test_negative_rate": 0.0651721554809533,
+    "train_rows_after_resampling": 291580
+  },
+  "class_weight='balanced'": {
+    "pr_auc": 0.8347616687441228,
+    "roc_auc": 0.974079241344287,
+    "precision_at_80_recall": 0.7112582781456953,
+    "recall_at_0.5": 0.876117496807152,
+    "precision_at_0.5": 0.5643767996709174,
+    "n_test": 72086,
+    "test_negative_rate": 0.0651721554809533,
+    "train_rows_after_resampling": 291580
+  },
+  "random oversampling (train only)": {
+    "pr_auc": 0.8288398686675166,
+    "roc_auc": 0.973006635572202,
+    "precision_at_80_recall": 0.6868262378951215,
+    "recall_at_0.5": 0.8607918263090677,
+    "precision_at_0.5": 0.5838025119099177,
+    "n_test": 72086,
+    "test_negative_rate": 0.0651721554809533,
+    "train_rows_after_resampling": 531468
+  },
+  "SMOTE (train only)": {
+    "pr_auc": 0.8178257261593722,
+    "roc_auc": 0.9723672226029053,
+    "precision_at_80_recall": 0.6730528200537154,
+    "recall_at_0.5": 0.8520647083865475,
+    "precision_at_0.5": 0.5844648853847277,
+    "n_test": 72086,
+    "test_negative_rate": 0.0651721554809533,
+    "train_rows_after_resampling": 531468
+  },
+  "LEAKY: SMOTE before split (random split)": {
+    "pr_auc": 0.9915588144364526,
+    "roc_auc": 0.992997739040791,
+    "precision_at_80_recall": 0.9883181902466159,
+    "recall_at_0.5": 0.983219260326609,
+    "precision_at_0.5": 0.9545500910746813,
+    "n_test": 133249,
+    "test_negative_rate": 0.4999962476266238
+  },
+  "reference: same random split, no SMOTE": {
+    "pr_auc": 0.8632726354796393,
+    "roc_auc": 0.9737355134076165,
+    "precision_at_80_recall": 0.765807962529274,
+    "recall_at_0.5": 0.6878376166311999,
+    "precision_at_0.5": 0.8680024788266887,
+    "n_test": 72734,
+    "test_negative_rate": 0.08399098083427282
+  }
+}

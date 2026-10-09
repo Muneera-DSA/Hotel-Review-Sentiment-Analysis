@@ -1,0 +1,172 @@
+{
+  "base_value_logodds": -5.3954721528035625,
+  "base_value_probability": 0.004516585599245898,
+  "additivity_max_abs_error": 1.1102230246251565e-14,
+  "examples": [
+    {
+      "title": "Correctly flagged negative",
+      "score": 5.0,
+      "hotel": "Hotel Lloyd",
+      "text": "location the internet was not working at all very poor and bad signal the breakfast sucks",
+      "explanation": {
+        "base_value": -5.3954721528035625,
+        "features": [
+          [
+            "poor",
+            1.3157044456863143
+          ],
+          [
+            "bad",
+            1.2062550660865914
+          ],
+          [
+            "not",
+            0.7939570286863684
+          ],
+          [
+            "sucks",
+            0.7327148299797779
+          ],
+          [
+            "at all",
+            0.6951617130562261
+          ],
+          [
+            "very poor",
+            0.4508197805598861
+          ],
+          [
+            "poor and",
+            0.42349561610649733
+          ],
+          [
+            "all very",
+            -0.41372282998123305
+          ],
+          [
+            "working at",
+            -0.32386474341068694
+          ],
+          [
+            "working",
+            0.3231964128832454
+          ]
+        ],
+        "other_present_features": -0.279452418066153,
+        "absent_features": 2.139459575910463,
+        "logit": 1.668252324693734,
+        "p_negative": 0.8413426715473684
+      }
+    },
+    {
+      "title": "Mixed review, positive score, borderline",
+      "score": 9.2,
+      "hotel": "Zenit Barcelona",
+      "text": "good room frendly personal but waiting for two people it has to be two tooth brushs in the bathroom and two pieces of soup not one",
+      "explanation": {
+        "base_value": -5.3954721528035625,
+        "features": [
+          [
+            "not",
+            0.6361860549684296
+          ],
+          [
+            "pieces",
+            0.3681178511154173
+          ],
+          [
+            "but",
+            -0.34228599855330466
+          ],
+          [
+            "personal",
+            0.31512260711500745
+          ],
+          [
+            "waiting",
+            0.3016819143172147
+          ],
+          [
+            "two",
+            0.28200566148284023
+          ],
+          [
+            "tooth",
+            0.28002475029503193
+          ],
+          [
+            "good",
+            -0.22077261890962163
+          ],
+          [
+            "people it",
+            0.2143140495144818
+          ],
+          [
+            "be two",
+            -0.1639589246203835
+          ]
+        ],
+        "other_present_features": 1.385781832343848,
+        "absent_features": 2.140064270043356,
+        "logit": -0.19919070369124503,
+        "p_negative": 0.4503663250043331
+      }
+    },
+    {
+      "title": "Missed: low score, positive text (label noise?)",
+      "score": 2.9,
+      "hotel": "citizenM London Bankside",
+      "text": "everything excellent great location friendly staff nice rooms lovely atmosphere and feel would definitely stay again the pillows were a bit lumpy and could do with a couple of extras",
+      "explanation": {
+        "base_value": -5.3954721528035625,
+        "features": [
+          [
+            "excellent",
+            -1.0332033057637973
+          ],
+          [
+            "lovely",
+            -0.9979465878104665
+          ],
+          [
+            "great",
+            -0.7077629490279762
+          ],
+          [
+            "bit",
+            -0.6697480788582139
+          ],
+          [
+            "nice",
+            -0.369474968142494
+          ],
+          [
+            "atmosphere",
+            -0.3613314915200144
+          ],
+          [
+            "definitely stay",
+            -0.3591409928318655
+          ],
+          [
+            "friendly staff",
+            -0.33822861719314096
+          ],
+          [
+            "would definitely",
+            -0.33390546619757006
+          ],
+          [
+            "nice rooms",
+            -0.3067144723425779
+          ]
+        ],
+        "other_present_features": -1.8949958332658605,
+        "absent_features": 1.1539168155171105,
+        "logit": -11.61400810024043,
+        "p_negative": 9.038501696965232e-06
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data and model artefacts are reproducible from code - never commit them
+data/*
+!data/README.md
+models/*
+!models/.gitkeep
+*.pkl
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
