@@ -1,0 +1,51 @@
+term,coef,direction
+dirty,12.79626438689886,-> negative
+not,11.223835120081272,-> negative
+rude,10.857442559418374,-> negative
+worst,10.240326755329308,-> negative
+poor,9.064220210850525,-> negative
+nothing the,8.685580781661422,-> negative
+awful,8.537347456773636,-> negative
+horrible,8.423695975229517,-> negative
+filthy,8.319070910608568,-> negative
+bad,8.120860388219834,-> negative
+terrible,8.047475673324428,-> negative
+not clean,7.95702060496294,-> negative
+unfriendly,7.886685775759547,-> negative
+not recommend,7.79153019902317,-> negative
+shabby,7.709135427958811,-> negative
+never,7.668791792566875,-> negative
+unhelpful,7.629744650019211,-> negative
+not helpful,7.60925872753996,-> negative
+not friendly,7.559035823149783,-> negative
+disgusting,7.557361907910994,-> negative
+nothing everything,7.33996076226261,-> negative
+dated,7.2019085415278665,-> negative
+tiny,6.867627799997435,-> negative
+uncomfortable,6.8257598704365074,-> negative
+tired,6.579495698721754,-> negative
+excellent,-18.655623232508763,-> positive
+great,-17.585784120933,-> positive
+amazing,-14.435378797859201,-> positive
+lovely,-13.5064527961701,-> positive
+perfect,-12.184278056309163,-> positive
+fantastic,-11.771045716441245,-> positive
+comfortable,-10.623676181993192,-> positive
+wonderful,-9.973617454791622,-> positive
+loved,-9.650162249061777,-> positive
+beautiful,-8.871663070312682,-> positive
+helpful,-8.46700698309715,-> positive
+superb,-8.330425708005114,-> positive
+comfy,-8.015499091759263,-> positive
+bit,-7.924643567862118,-> positive
+brilliant,-7.881198989186512,-> positive
+spacious,-7.52740570782639,-> positive
+quiet,-7.282665834315766,-> positive
+modern,-7.109106066438666,-> positive
+awesome,-6.962676809865417,-> positive
+fabulous,-6.798791450623635,-> positive
+friendly,-6.740492757398378,-> positive
+nice,-6.377940601972025,-> positive
+love,-6.3051259208450094,-> positive
+outstanding,-6.296199492530116,-> positive
+very clean,-5.878607855786336,-> positive

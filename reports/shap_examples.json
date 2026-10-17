@@ -1,0 +1,172 @@
+{
+  "base_value_logodds": -5.401715418522332,
+  "base_value_probability": 0.00448860137326275,
+  "additivity_max_abs_error": 4.440892098500626e-15,
+  "examples": [
+    {
+      "title": "Correctly flagged negative",
+      "score": 5.0,
+      "hotel": "Hotel Arena",
+      "text": "location building work starting at am waking us up no mention of building work on booking com and on hotels web page it does say renovations but not that there would be noise disturbance also air conditioning very very loud",
+      "explanation": {
+        "base_value": -5.401715418522332,
+        "features": [
+          [
+            "very very",
+            0.3710137296178463
+          ],
+          [
+            "loud",
+            0.3356773657348972
+          ],
+          [
+            "no",
+            0.32290536524074903
+          ],
+          [
+            "not",
+            0.2943100983566928
+          ],
+          [
+            "on booking",
+            0.2810004663698358
+          ],
+          [
+            "web",
+            0.2770859657849621
+          ],
+          [
+            "building",
+            0.24799387064930414
+          ],
+          [
+            "noise",
+            0.2440600732099542
+          ],
+          [
+            "booking",
+            0.24157319334029892
+          ],
+          [
+            "but",
+            -0.223445011130197
+          ]
+        ],
+        "other_present_features": 2.4613607281260195,
+        "absent_features": 2.2431121308882402,
+        "logit": 1.6949325576662715,
+        "p_negative": 0.8448717383520525
+      }
+    },
+    {
+      "title": "Mixed review, positive score, borderline",
+      "score": 9.2,
+      "hotel": "Holiday Inn London West",
+      "text": "huge selection of food for breakfast i have booked the room for adults and kids and years old the room had single beds only",
+      "explanation": {
+        "base_value": -5.401715418522332,
+        "features": [
+          [
+            "old",
+            0.7259830504137593
+          ],
+          [
+            "booked",
+            0.4465806251720798
+          ],
+          [
+            "for adults",
+            0.3509985006227028
+          ],
+          [
+            "old the",
+            0.3460091038610344
+          ],
+          [
+            "of food",
+            -0.340581998761122
+          ],
+          [
+            "only",
+            0.32347507526337793
+          ],
+          [
+            "food for",
+            -0.3108763753883772
+          ],
+          [
+            "single",
+            0.2941963646503899
+          ],
+          [
+            "room had",
+            0.292905193623429
+          ],
+          [
+            "kids",
+            0.28757561719614927
+          ]
+        ],
+        "other_present_features": 0.6501560905312134,
+        "absent_features": 2.1336494840520173,
+        "logit": -0.20164468728567808,
+        "p_negative": 0.4497589487818292
+      }
+    },
+    {
+      "title": "Missed: low score, positive text (label noise?)",
+      "score": 2.9,
+      "hotel": "citizenM London Bankside",
+      "text": "everything excellent great location friendly staff nice rooms lovely atmosphere and feel would definitely stay again the pillows were a bit lumpy and could do with a couple of extras",
+      "explanation": {
+        "base_value": -5.401715418522332,
+        "features": [
+          [
+            "excellent",
+            -1.0375540043247178
+          ],
+          [
+            "lovely",
+            -1.0077549130688794
+          ],
+          [
+            "great",
+            -0.7182044047990703
+          ],
+          [
+            "bit",
+            -0.6720828491921227
+          ],
+          [
+            "nice",
+            -0.3729706764281703
+          ],
+          [
+            "definitely stay",
+            -0.3577931670497008
+          ],
+          [
+            "atmosphere",
+            -0.35363703456850826
+          ],
+          [
+            "would definitely",
+            -0.3321432638741954
+          ],
+          [
+            "friendly staff",
+            -0.3272516748965363
+          ],
+          [
+            "friendly",
+            -0.31223794319417775
+          ]
+        ],
+        "other_present_features": -1.9649517295598222,
+        "absent_features": 1.1230913397655224,
+        "logit": -11.735205739712711,
+        "p_negative": 8.006845084336039e-06
+      }
+    }
+  ]
+}

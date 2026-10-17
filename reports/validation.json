@@ -1,0 +1,613 @@
+{
+  "data_fingerprint": {
+    "file": "Hotel_Reviews.csv",
+    "sha256": "a4810c2757934f0a826a1b16a437eb67a38be45b1a22ad56772afce0b6c11af9"
+  },
+  "primary": {
+    "n": 72086,
+    "negative_rate": 0.0651721554809533,
+    "pr_auc": 0.8494890275577814,
+    "roc_auc": 0.9750505185236735,
+    "precision_at_80_recall": 0.7428853754940712,
+    "recall": 0.8082162622392507,
+    "precision": 0.7306138156628824,
+    "flag_rate": 0.07209444274893877,
+    "threshold": 0.3105695544952331,
+    "C": 4.0
+  },
+  "repeated_splits": {
+    "runs": [
+      {
+        "seed": 1,
+        "n": 66746,
+        "negative_rate": 0.08761573727264556,
+        "pr_auc": 0.8722075487825537,
+        "roc_auc": 0.9758516983097344,
+        "precision_at_80_recall": 0.7822890559732665
+      },
+      {
+        "seed": 2,
+        "n": 69740,
+        "negative_rate": 0.08472899340407226,
+        "pr_auc": 0.859907403335981,
+        "roc_auc": 0.9723321543628416,
+        "precision_at_80_recall": 0.7563979526551503
+      },
+      {
+        "seed": 3,
+        "n": 68165,
+        "negative_rate": 0.083356561285117,
+        "pr_auc": 0.8727528608048335,
+        "roc_auc": 0.9769241253332275,
+        "precision_at_80_recall": 0.7859612724757953
+      },
+      {
+        "seed": 4,
+        "n": 73777,
+        "negative_rate": 0.0921154289277146,
+        "pr_auc": 0.8753476243514956,
+        "roc_auc": 0.975297110161492,
+        "precision_at_80_recall": 0.7837681995098745
+      },
+      {
+        "seed": 5,
+        "n": 66819,
+        "negative_rate": 0.07810652658674928,
+        "pr_auc": 0.8535566989721179,
+        "roc_auc": 0.9721241131928046,
+        "precision_at_80_recall": 0.7463379778492318
+      }
+    ],
+    "pr_auc_mean": 0.8667544272493963,
+    "pr_auc_sd": 0.009495032176902571,
+    "roc_auc_mean": 0.9745058402720199,
+    "roc_auc_sd": 0.0021611963610783723
+  },
+  "significance": {
+    "bigrams vs unigrams only": {
+      "delta_pr_auc": 0.043259549873617575,
+      "ci95": [
+        0.036121107990708806,
+        0.05092085524743919
+      ],
+      "share_of_resamples_delta_le_0": 0.0,
+      "n_boot": 1000
+    },
+    "keeping negations vs stopwords removed": {
+      "delta_pr_auc": 0.0584669279826614,
+      "ci95": [
+        0.04870420272589576,
+        0.0694956560085171
+      ],
+      "share_of_resamples_delta_le_0": 0.0,
+      "n_boot": 1000
+    },
+    "no balancing vs class weights": {
+      "delta_pr_auc": 0.01438655531123767,
+      "ci95": [
+        0.011665129017778945,
+        0.017505645986463536
+      ],
+      "share_of_resamples_delta_le_0": 0.0,
+      "n_boot": 1000
+    }
+  },
+  "label_sensitivity": [
+    {
+      "negative_if_score_le": 4.0,
+      "positive_if_score_ge": 9.0,
+      "rows": 255810,
+      "excluded_as_ambiguous": 257465,
+      "n": 52304,
+      "negative_rate": 0.030303609666564698,
+      "pr_auc": 0.8714518331360875,
+      "roc_auc": 0.978866648384869,
+      "precision_at_80_recall": 0.8419654714475432
+    },
+    {
+      "negative_if_score_le": 5.0,
+      "positive_if_score_ge": 8.0,
+      "rows": 363666,
+      "excluded_as_ambiguous": 149128,
+      "n": 72086,
+      "negative_rate": 0.0651721554809533,
+      "pr_auc": 0.8494890275577814,
+      "roc_auc": 0.9750505185236735,
+      "precision_at_80_recall": 0.7428853754940712
+    },
+    {
+      "negative_if_score_le": 6.0,
+      "positive_if_score_ge": 7.0,
+      "rows": 478095,
+      "excluded_as_ambiguous": 34036,
+      "n": 91852,
+      "negative_rate": 0.08947001698384358,
+      "pr_auc": 0.7320661054390519,
+      "roc_auc": 0.9494903211796409,
+      "precision_at_80_recall": 0.5120716510903427
+    }
+  ],
+  "unseen_text": {
+    "share_of_test_with_text_seen_in_training": 0.0422412118858031,
+    "unseen_only": {
+      "n": 69041,
+      "negative_rate": 0.06643878275227763,
+      "pr_auc": 0.8547796718614881,
+      "roc_auc": 0.9763378260908596,
+      "precision_at_80_recall": 0.7602980749327262
+    },
+    "seen_only": {
+      "n": 3045,
+      "negative_rate": 0.03645320197044335,
+      "pr_auc": 0.6086218459208662,
+      "roc_auc": 0.9235109342471306,
+      "precision_at_80_recall": 0.24119241192411925
+    }
+  },
+  "behavioural": {
+    "negation: adding 'not' to praise should raise the negative score": {
+      "pass_rate": 1.0,
+      "cases": [
+        {
+          "a": "the room was clean",
+          "b": "the room was not clean",
+          "score_a": 0.129,
+          "score_b": 0.994,
+          "pass": true
+        },
+        {
+          "a": "the staff were helpful",
+          "b": "the staff were not helpful",
+          "score_a": 0.015,
+          "score_b": 0.967,
+          "pass": true
+        },
+        {
+          "a": "the bed was comfortable",
+          "b": "the bed was not comfortable",
+          "score_a": 0.008,
+          "score_b": 0.445,
+          "pass": true
+        },
+        {
+          "a": "breakfast was good",
+          "b": "breakfast was not good",
+          "score_a": 0.021,
+          "score_b": 0.489,
+          "pass": true
+        },
+        {
+          "a": "the wifi worked well",
+          "b": "the wifi did not work",
+          "score_a": 0.016,
+          "score_b": 0.288,
+          "pass": true
+        },
+        {
+          "a": "we would stay here again",
+          "b": "we would never stay here again",
+          "score_a": 0.01,
+          "score_b": 0.913,
+          "pass": true
+        },
+        {
+          "a": "i was satisfied with the room",
+          "b": "i was not satisfied with the room",
+          "score_a": 0.059,
+          "score_b": 0.364,
+          "pass": true
+        },
+        {
+          "a": "the hotel was worth the money",
+          "b": "the hotel was not worth the money",
+          "score_a": 0.109,
+          "score_b": 0.902,
+          "pass": true
+        },
+        {
+          "a": "the shower was hot",
+          "b": "there was no hot water in the shower",
+          "score_a": 0.029,
+          "score_b": 0.619,
+          "pass": true
+        },
+        {
+          "a": "staff were friendly",
+          "b": "staff were not friendly at all",
+          "score_a": 0.074,
+          "score_b": 0.985,
+          "pass": true
+        }
+      ]
+    },
+    "negated complaint: 'not dirty' should score less negative than 'dirty'": {
+      "pass_rate": 0.625,
+      "cases": [
+        {
+          "a": "the room was dirty",
+          "b": "the room was not dirty",
+          "score_a": 0.997,
+          "score_b": 1.0,
+          "pass": false
+        },
+        {
+          "a": "the staff were rude",
+          "b": "the staff were not rude",
+          "score_a": 0.987,
+          "score_b": 0.944,
+          "pass": true
+        },
+        {
+          "a": "there were problems with the room",
+          "b": "there were no problems with the room",
+          "score_a": 0.13,
+          "score_b": 0.181,
+          "pass": false
+        },
+        {
+          "a": "it was bad",
+          "b": "it was not bad",
+          "score_a": 0.789,
+          "score_b": 0.699,
+          "pass": true
+        },
+        {
+          "a": "the room was noisy",
+          "b": "the room was not noisy",
+          "score_a": 0.399,
+          "score_b": 0.346,
+          "pass": true
+        },
+        {
+          "a": "i had complaints",
+          "b": "i had no complaints",
+          "score_a": 0.036,
+          "score_b": 0.015,
+          "pass": true
+        },
+        {
+          "a": "the bathroom was small",
+          "b": "the bathroom was not small",
+          "score_a": 0.062,
+          "score_b": 0.294,
+          "pass": false
+        },
+        {
+          "a": "the location was a problem",
+          "b": "the location was not a problem",
+          "score_a": 0.339,
+          "score_b": 0.191,
+          "pass": true
+        }
+      ]
+    },
+    "invariance: city / hotel name / punctuation should change score by < 0.05": {
+      "pass_rate": 0.8,
+      "cases": [
+        {
+          "a": "great stay in amsterdam friendly staff",
+          "b": "great stay in vienna friendly staff",
+          "score_a": 0.0,
+          "score_b": 0.0,
+          "pass": true
+        },
+        {
+          "a": "lovely room at the hotel arena",
+          "b": "lovely room at the park plaza",
+          "score_a": 0.001,
+          "score_b": 0.001,
+          "pass": true
+        },
+        {
+          "a": "the room was dirty and the staff were rude",
+          "b": "The room was DIRTY, and the staff were rude!!!",
+          "score_a": 1.0,
+          "score_b": 1.0,
+          "pass": true
+        },
+        {
+          "a": "breakfast was cold and expensive",
+          "b": "breakfast was cold and expensive we visited in june",
+          "score_a": 0.504,
+          "score_b": 0.109,
+          "pass": false
+        },
+        {
+          "a": "excellent location close to the metro",
+          "b": "excellent location close to the tram",
+          "score_a": 0.0,
+          "score_b": 0.0,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "subgroups": {
+    "length_band": [
+      {
+        "group": "1-10 words",
+        "n": 18739,
+        "negative_rate": 0.04471956881370404,
+        "pr_auc": 0.6400318781509228,
+        "roc_auc": 0.9452735204057212,
+        "precision_at_80_recall": 0.34757981462409887,
+        "recall": 0.6384248210023866,
+        "precision": 0.562565720294427,
+        "flag_rate": 0.050749773200277494
+      },
+      {
+        "group": "11-30",
+        "n": 28228,
+        "negative_rate": 0.04892305512257333,
+        "pr_auc": 0.801473037321237,
+        "roc_auc": 0.9703647997865557,
+        "precision_at_80_recall": 0.6031659388646288,
+        "recall": 0.7480086893555394,
+        "precision": 0.6909698996655519,
+        "flag_rate": 0.05296159841292334
+      },
+      {
+        "group": "31-80",
+        "n": 19886,
+        "negative_rate": 0.07930202152267928,
+        "pr_auc": 0.9081828240504614,
+        "roc_auc": 0.9851234149149527,
+        "precision_at_80_recall": 0.868547832071576,
+        "recall": 0.8687381103360812,
+        "precision": 0.7932831499710481,
+        "flag_rate": 0.08684501659458915
+      },
+      {
+        "group": "80+",
+        "n": 5233,
+        "negative_rate": 0.172367666730365,
+        "pr_auc": 0.9625609690079389,
+        "roc_auc": 0.9918951753485545,
+        "precision_at_80_recall": 0.9466145833333334,
+        "recall": 0.9523281596452328,
+        "precision": 0.8388671875,
+        "flag_rate": 0.19568125358303076
+      }
+    ],
+    "english_native_country": [
+      {
+        "group": "English-speaking country",
+        "n": 47610,
+        "negative_rate": 0.05318210459987398,
+        "pr_auc": 0.8442946730138816,
+        "roc_auc": 0.976936658922323,
+        "precision_at_80_recall": 0.7238299392640228,
+        "recall": 0.8076619273301737,
+        "precision": 0.7145352900069881,
+        "flag_rate": 0.06011342155009452
+      },
+      {
+        "group": "Other countries",
+        "n": 24476,
+        "negative_rate": 0.08849485210001634,
+        "pr_auc": 0.856528517525942,
+        "roc_auc": 0.9707434339345734,
+        "precision_at_80_recall": 0.7624285085789705,
+        "recall": 0.8088642659279779,
+        "precision": 0.750321199143469,
+        "flag_rate": 0.0953995750939696
+      }
+    ],
+    "nationality_top8": [
+      {
+        "group": "Australia",
+        "n": 3087,
+        "negative_rate": 0.04016844833171364,
+        "pr_auc": 0.8539571874646557,
+        "roc_auc": 0.9735133855181649,
+        "precision_at_80_recall": 0.8064516129032258,
+        "recall": 0.8387096774193549,
+        "precision": 0.7272727272727273,
+        "flag_rate": 0.0463232912212504
+      },
+      {
+        "group": "Canada",
+        "n": 1183,
+        "negative_rate": 0.04395604395604396,
+        "pr_auc": 0.8092966345852447,
+        "roc_auc": 0.9686968645854587,
+        "precision_at_80_recall": 0.7,
+        "recall": 0.8076923076923077,
+        "precision": 0.6774193548387096,
+        "flag_rate": 0.052409129332206254
+      },
+      {
+        "group": "Ireland",
+        "n": 1887,
+        "negative_rate": 0.050344462109167994,
+        "pr_auc": 0.8918170181785905,
+        "roc_auc": 0.9871945488721804,
+        "precision_at_80_recall": 0.8837209302325582,
+        "recall": 0.8736842105263158,
+        "precision": 0.7410714285714286,
+        "flag_rate": 0.059353471118177
+      },
+      {
+        "group": "Netherlands",
+        "n": 1143,
+        "negative_rate": 0.07961504811898512,
+        "pr_auc": 0.9036989463535853,
+        "roc_auc": 0.9849684535996324,
+        "precision_at_80_recall": 0.872093023255814,
+        "recall": 0.8241758241758241,
+        "precision": 0.872093023255814,
+        "flag_rate": 0.0752405949256343
+      },
+      {
+        "group": "Saudi Arabia",
+        "n": 1169,
+        "negative_rate": 0.1317365269461078,
+        "pr_auc": 0.8486530978196682,
+        "roc_auc": 0.9526357878574627,
+        "precision_at_80_recall": 0.6395939086294417,
+        "recall": 0.7857142857142857,
+        "precision": 0.6914285714285714,
+        "flag_rate": 0.1497005988023952
+      },
+      {
+        "group": "United Arab Emirates",
+        "n": 1369,
+        "negative_rate": 0.14170927684441198,
+        "pr_auc": 0.8919767692791314,
+        "roc_auc": 0.9748322000438693,
+        "precision_at_80_recall": 0.78,
+        "recall": 0.8092783505154639,
+        "precision": 0.7511961722488039,
+        "flag_rate": 0.15266617969320673
+      },
+      {
+        "group": "United Kingdom",
+        "n": 35263,
+        "negative_rate": 0.056546521850097835,
+        "pr_auc": 0.8509855556517684,
+        "roc_auc": 0.9767297700007352,
+        "precision_at_80_recall": 0.7304347826086957,
+        "recall": 0.8019057171514543,
+        "precision": 0.7268181818181818,
+        "flag_rate": 0.062388339052264416
+      },
+      {
+        "group": "United States of America",
+        "n": 5733,
+        "negative_rate": 0.04413047270190127,
+        "pr_auc": 0.7830954764784827,
+        "roc_auc": 0.9767714434090187,
+        "precision_at_80_recall": 0.628482972136223,
+        "recall": 0.8063241106719368,
+        "precision": 0.6238532110091743,
+        "flag_rate": 0.05703819989534275
+      }
+    ],
+    "city": [
+      {
+        "group": "Amsterdam",
+        "n": 9047,
+        "negative_rate": 0.0435503481817177,
+        "pr_auc": 0.8069334064962687,
+        "roc_auc": 0.9708597000776117,
+        "precision_at_80_recall": 0.6884531590413944,
+        "recall": 0.7969543147208121,
+        "precision": 0.6916299559471366,
+        "flag_rate": 0.05018238089974577
+      },
+      {
+        "group": "Barcelona",
+        "n": 10138,
+        "negative_rate": 0.053363582560662856,
+        "pr_auc": 0.8360805102475833,
+        "roc_auc": 0.9720643985903636,
+        "precision_at_80_recall": 0.7338983050847457,
+        "recall": 0.8077634011090573,
+        "precision": 0.7199341021416804,
+        "flag_rate": 0.05987374235549418
+      },
+      {
+        "group": "London",
+        "n": 35728,
+        "negative_rate": 0.0749832064487237,
+        "pr_auc": 0.8618858883256736,
+        "roc_auc": 0.9755335068605531,
+        "precision_at_80_recall": 0.765524625267666,
+        "recall": 0.8156028368794326,
+        "precision": 0.7386747802569303,
+        "flag_rate": 0.08279220779220779
+      },
+      {
+        "group": "Milan",
+        "n": 5257,
+        "negative_rate": 0.06981167966520829,
+        "pr_auc": 0.8667624777340832,
+        "roc_auc": 0.9760755698946301,
+        "precision_at_80_recall": 0.7903225806451613,
+        "recall": 0.8283378746594006,
+        "precision": 0.7581047381546134,
+        "flag_rate": 0.07627924671866083
+      },
+      {
+        "group": "Paris",
+        "n": 8593,
+        "negative_rate": 0.06272547422320493,
+        "pr_auc": 0.8499152753105875,
+        "roc_auc": 0.9791202979148632,
+        "precision_at_80_recall": 0.7359454855195912,
+        "recall": 0.7922077922077922,
+        "precision": 0.7426086956521739,
+        "flag_rate": 0.06691493075759339
+      },
+      {
+        "group": "Vienna",
+        "n": 3323,
+        "negative_rate": 0.05356605476978634,
+        "pr_auc": 0.7664708344710189,
+        "roc_auc": 0.9658580589842982,
+        "precision_at_80_recall": 0.5296296296296297,
+        "recall": 0.7303370786516854,
+        "precision": 0.6435643564356436,
+        "flag_rate": 0.06078844417694854
+      }
+    ]
+  },
+  "operating_points": [
+    {
+      "target_recall_on_train": 0.7,
+      "threshold": 0.48500389784655934,
+      "recall": 0.7203065134099617,
+      "precision": 0.8376237623762376,
+      "flag_rate": 0.05604416946425103,
+      "per_1000_reviews": {
+        "reviews_to_read": 56,
+        "unhappy_guests_in_1000": 65.2,
+        "unhappy_caught": 46.9,
+        "unhappy_missed": 18.2,
+        "reads_not_needed": 9.1
+      }
+    },
+    {
+      "target_recall_on_train": 0.8,
+      "threshold": 0.31056733118462804,
+      "recall": 0.8082162622392507,
+      "precision": 0.7306138156628824,
+      "flag_rate": 0.07209444274893877,
+      "per_1000_reviews": {
+        "reviews_to_read": 72,
+        "unhappy_guests_in_1000": 65.2,
+        "unhappy_caught": 52.7,
+        "unhappy_missed": 12.5,
+        "reads_not_needed": 19.4
+      }
+    },
+    {
+      "target_recall_on_train": 0.9,
+      "threshold": 0.12974130193545058,
+      "recall": 0.9025117071094083,
+      "precision": 0.5312617466482897,
+      "flag_rate": 0.11071497933024443,
+      "per_1000_reviews": {
+        "reviews_to_read": 111,
+        "unhappy_guests_in_1000": 65.2,
+        "unhappy_caught": 58.8,
+        "unhappy_missed": 6.4,
+        "reads_not_needed": 51.9
+      }
+    },
+    {
+      "target_recall_on_train": 0.95,
+      "threshold": 0.054370661237272695,
+      "recall": 0.9472115793954874,
+      "precision": 0.3672526202855492,
+      "flag_rate": 0.16809089143523015,
+      "per_1000_reviews": {
+        "reviews_to_read": 168,
+        "unhappy_guests_in_1000": 65.2,
+        "unhappy_caught": 61.7,
+        "unhappy_missed": 3.4,
+        "reads_not_needed": 106.4
+      }
+    }
+  ]
+}
